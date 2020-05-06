@@ -31,10 +31,10 @@ func main() {
 			Filters: []aws.GetAmiFilter{
 				{
 					Name:   "name",
-					Values: []string{"amzn-ami-hvm-*-x86_64-ebs"},
+					Values: []string{"*amazon-ecs-optimized"},
 				},
 			},
-			Owners:     []string{"137112412989", "210953353124"}, // Amazon in SA have a different OwnerID
+			Owners:     []string{"amazon"},
 			MostRecent: &mostRecent,
 		})
 		if err != nil {
@@ -58,6 +58,12 @@ func main() {
 					Protocol:   pulumi.String("tcp"),
 					FromPort:   pulumi.Int(6443),
 					ToPort:     pulumi.Int(6443),
+					CidrBlocks: pulumi.StringArray{pulumi.String("0.0.0.0/0")},
+				},
+				ec2.SecurityGroupIngressArgs{
+					Protocol:   pulumi.String("tcp"),
+					FromPort:   pulumi.Int(2379),
+					ToPort:     pulumi.Int(2380),
 					CidrBlocks: pulumi.StringArray{pulumi.String("0.0.0.0/0")},
 				},
 			},
@@ -115,6 +121,14 @@ func main() {
 			Nodes: buildNodeDetails(nodes),
 			Authentication: &rke.ClusterAuthenticationArgs{
 				Sans: getNodeAddresses(nodes),
+			},
+			Services: &rke.ClusterServicesArgs{
+				Kubelet: &rke.ClusterServicesKubeletArgs{
+					ExtraBinds: &pulumi.StringArray{
+						pulumi.String("/var/lib/kubelet:/var/lib/kubelet"),
+						pulumi.String("/var/lib/rancher:/var/lib/rancher"),
+					},
+				},
 			},
 		})
 		if err != nil {
