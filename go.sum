@@ -151,6 +151,10 @@ github.com/pulumi/pulumi-kubernetes/sdk/v2 v2.0.0/go.mod h1:Dh6Kd1YK6eEMpaQixbPb
 github.com/pulumi/pulumi-rancher2 v2.1.0+incompatible h1:Aed+5XnNlVDBnNtLFVLwDC4zW15ssmYVnIlbb8UVuqk=
 github.com/pulumi/pulumi-rancher2/sdk/v2 v2.1.0 h1:4sLhnTvTwnfBPKXxkETIUYeHDEMlj2taVtlpza9hlJo=
 github.com/pulumi/pulumi-rancher2/sdk/v2 v2.1.0/go.mod h1:5nzcxJwUOBysJDgObXMU5Jv+ZWOK5o/aWNIE2Obj4E0=
+github.com/pulumi/pulumi-random v2.1.0+incompatible h1:8bfzVTmgem1RlZcqxgBozLa5t1CF+JiTHeY8qA7Nlf0=
+github.com/pulumi/pulumi-random/sdk v1.7.0 h1:6WL+mI7TlQajNsAwZbmaic8vEAx198x7HFbeeKvOf1I=
+github.com/pulumi/pulumi-random/sdk/v2 v2.1.0 h1:f678o8IwjWRThSqD/tpHE95JHznnCnc0/KUD4inwr5A=
+github.com/pulumi/pulumi-random/sdk/v2 v2.1.0/go.mod h1:0iu3fQ0nM4jltoV3B8Dk5I07uXZ0lUDCODve9rIZbaI=
 github.com/pulumi/pulumi-vsphere v2.3.0+incompatible h1:H5nTrxjYv/C2c9XGaPWt8jBFeoXKUe6xRzs+y9otljM=
 github.com/pulumi/pulumi-vsphere/sdk/v2 v2.3.0 h1:aF5nOTHMb/TE1+8N8/8lFoEdnAxy/giKN1Z6END0ax8=
 github.com/pulumi/pulumi-vsphere/sdk/v2 v2.3.0/go.mod h1:Fl63StEKZDw71lKTzAbq6p5lXwFJDMI/O/AI/5G4rqE=
